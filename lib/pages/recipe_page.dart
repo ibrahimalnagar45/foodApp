@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:plantapp/models/food_card_model.dart';
 import 'package:plantapp/widgets/custom_drawer.dart';
 
-import '../widgets/constants.dart';
+import '../constants.dart';
 
 class RecipePage extends StatelessWidget {
-  const RecipePage({super.key, this.recipe});
+  const RecipePage({super.key, this.food});
   static String id = 'RecipePage';
-  final FoodCardModel? recipe;
+  final FoodCardModel? food;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       // appBar: AppBar(
       //   backgroundColor: Colors.transparent,
       //   elevation: 0,
@@ -28,7 +29,7 @@ class RecipePage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(recipe!.image),
+                  image: AssetImage(food!.image),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -70,7 +71,7 @@ class RecipePage extends StatelessWidget {
                 topRight: Radius.circular(kPrimarypadding)),
           ),
           child: Text(
-            recipe!.name,
+            food!.name,
             style: TextStyle(
               color: Colors.black.withAlpha(
                 200,
@@ -79,9 +80,41 @@ class RecipePage extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-          " 1 ",
-          style: TextStyle(backgroundColor: Colors.white),
+        Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.only(
+                left: kPrimarypadding / 2, top: kPrimarypadding / 2),
+            child: Text(
+              food!.info,
+              style: const TextStyle(
+                color: Colors.black87,
+              ),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.white,
+          child: const Padding(
+            padding: EdgeInsets.only(
+                left: kPrimarypadding / 2,
+                top: kPrimarypadding,
+                bottom: kPrimarypadding / 2),
+            child: Text(
+              "Steps:",
+              style: TextStyle(color: Colors.black, fontSize: 30),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.only(left: kPrimarypadding / 2, top: 3.0),
+            child: Text(
+              food!.steps,
+              style: const TextStyle(color: Colors.black87, fontSize: 15),
+            ),
+          ),
         ),
       ]),
     );

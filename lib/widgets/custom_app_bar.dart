@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CusotmAppBar extends StatelessWidget {
   const CusotmAppBar({super.key});
@@ -20,10 +21,12 @@ class CusotmAppBar extends StatelessWidget {
             ),
           ),
         ),
-        Icon(
-          Icons.person,
-          color: Colors.black,
-        )
+        CircleAvatar(
+          radius: 20,
+          backgroundImage: AssetImage(
+            "assets/images/R.jpeg",
+          ),
+        ),
       ],
     );
   }

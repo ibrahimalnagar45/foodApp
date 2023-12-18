@@ -12,7 +12,7 @@ class RecipeCard extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => RecipePage(
-                    recipe: food,
+                    food: food,
                   ))),
       child: Container(
         margin: const EdgeInsets.only(right: 12, left: 12, bottom: 12),
@@ -62,9 +62,16 @@ class RecipeCard extends StatelessWidget {
                       style: const TextStyle(fontSize: 20),
                     ),
                   ),
-                  Text(
-                    "Sweets | Amiricain | Dessert | ",
-                    style: TextStyle(color: Colors.grey.shade600),
+                  Container(
+                    width: 250,
+                    child: Text(
+                      food.info,
+                      style: TextStyle(
+                        color: Colors.grey.shade600,
+                      ),
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),

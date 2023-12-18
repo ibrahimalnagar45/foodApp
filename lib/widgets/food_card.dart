@@ -10,7 +10,7 @@ class FoodCard extends StatelessWidget {
     return GestureDetector(
       onTap: () =>
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return RecipePage(recipe: food);
+        return RecipePage(food: food);
       })),
       child: Padding(
         padding: const EdgeInsets.only(left: 8.0, top: 8),

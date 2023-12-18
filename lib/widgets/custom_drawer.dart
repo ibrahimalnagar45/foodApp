@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plantapp/pages/dessert_page.dart';
 import 'package:plantapp/pages/home_bage.dart';
 import 'package:plantapp/pages/plates_page.dart';
-import 'package:plantapp/widgets/constants.dart';
+import 'package:plantapp/constants.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
